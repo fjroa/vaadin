@@ -19,6 +19,7 @@ import java.util.Locale;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -30,6 +31,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @ComponentScan
+@EntityScan
 public class Application extends SpringApplication {
 
     public static void main(String[] args) throws Exception {
@@ -49,5 +51,4 @@ public class Application extends SpringApplication {
         lci.setParamName("lang");
         return lci;
     }
-
 }

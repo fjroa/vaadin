@@ -1,9 +1,16 @@
 package es.indra.hlf.vaadin.isfar.ui;
 
+import javax.annotation.PostConstruct;
+
+import org.vaadin.spring.UIScope;
+import org.vaadin.spring.VaadinComponent;
+
 import com.vaadin.ui.Accordion;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+@UIScope
+@VaadinComponent
 public class IsfarSideMenuUI extends VerticalLayout{
 
 	/**
@@ -11,7 +18,8 @@ public class IsfarSideMenuUI extends VerticalLayout{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public IsfarSideMenuUI(IsfarUI parent) {
+	@PostConstruct
+	protected void init() {
 		Accordion accordion = new Accordion();
 		accordion.setSizeFull();
 

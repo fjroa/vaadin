@@ -1,0 +1,50 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL"> 
+		<class>es.indra.hlf.vaadin.isfar.model.AdministracionPaciente</class>
+		<class>es.indra.hlf.vaadin.isfar.model.AdministracionPacienteMarca</class>
+		<class>es.indra.hlf.vaadin.isfar.model.AdministracionPrescripcion</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Carro</class>
+		<class>es.indra.hlf.vaadin.isfar.model.CarroUnidosis</class>
+		<class>es.indra.hlf.vaadin.isfar.model.CarroUnidosisDetalle</class>
+		<class>es.indra.hlf.vaadin.isfar.model.CarroUnidosisDetalleMarca</class>
+		<class>es.indra.hlf.vaadin.isfar.model.CompuestoMultimedicamento</class>
+		<class>es.indra.hlf.vaadin.isfar.model.EntidadBase</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Entrega</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Estado</class>
+		<class>es.indra.hlf.vaadin.isfar.model.EstadoCarro</class>
+		<class>es.indra.hlf.vaadin.isfar.model.EstadoMedicacionPaciente</class>
+		<class>es.indra.hlf.vaadin.isfar.model.FormaFarmaceuticaNoUnidosis</class>
+		<class>es.indra.hlf.vaadin.isfar.model.HistoricoCargaPaciente</class>
+		<class>es.indra.hlf.vaadin.isfar.model.HoraPauta</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Itinerario</class>
+		<class>es.indra.hlf.vaadin.isfar.model.LineaPosologia</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Medicamento</class>
+		<class>es.indra.hlf.vaadin.isfar.model.MedicamentoNoUnidosis</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Motivo</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Paciente</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Pagina</class>
+		<class>es.indra.hlf.vaadin.isfar.model.PautaAdministracion</class>
+		<class>es.indra.hlf.vaadin.isfar.model.PautaUnidadEnfermeria</class>
+		<class>es.indra.hlf.vaadin.isfar.model.PreparacionFarExterna</class>
+		<class>es.indra.hlf.vaadin.isfar.model.PrescripcionMedicamento</class>
+		<class>es.indra.hlf.vaadin.isfar.model.ProductoFarExterna</class>
+		<class>es.indra.hlf.vaadin.isfar.model.ProductoSeleccionado</class>
+		<class>es.indra.hlf.vaadin.isfar.model.StockAlmacen</class>
+		<class>es.indra.hlf.vaadin.isfar.model.SuministroInmediato</class>
+		<class>es.indra.hlf.vaadin.isfar.model.TiempoActualizacion</class>
+		<class>es.indra.hlf.vaadin.isfar.model.TramoPosologia</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Tratamiento</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Turno</class>
+		<class>es.indra.hlf.vaadin.isfar.model.Ubicacion</class>
+		<class>es.indra.hlf.vaadin.isfar.model.ValorVarConfCentro</class>
+		<class>es.indra.hlf.vaadin.isfar.model.VariableConfiguracion</class>
+		<class>es.indra.hlf.vaadin.isfar.model.VariableConfiguracionCentro</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="jboss.as.jpa.providerModule" value="hibernate3-bundled" />
+		</properties>
+	</persistence-unit>
+</persistence>

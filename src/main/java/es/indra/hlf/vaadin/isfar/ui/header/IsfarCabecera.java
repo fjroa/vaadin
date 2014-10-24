@@ -1,5 +1,10 @@
 package es.indra.hlf.vaadin.isfar.ui.header;
 
+import javax.annotation.PostConstruct;
+
+import org.vaadin.spring.UIScope;
+import org.vaadin.spring.VaadinComponent;
+
 import com.vaadin.server.ThemeResource;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.ui.HorizontalLayout;
@@ -7,6 +12,8 @@ import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Link;
 
+@UIScope
+@VaadinComponent
 public class IsfarCabecera extends HorizontalLayout{
 	
 	class Separator extends Label {
@@ -18,7 +25,8 @@ public class IsfarCabecera extends HorizontalLayout{
 		}
 	}
 	
-	public IsfarCabecera() {
+	@PostConstruct
+	protected void init() {
 		ThemeResource resource = new ThemeResource("img/logo.png");
 		addComponent(new Image("", resource));
 

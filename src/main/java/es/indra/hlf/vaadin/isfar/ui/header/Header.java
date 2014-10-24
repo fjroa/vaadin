@@ -1,18 +1,16 @@
 package es.indra.hlf.vaadin.isfar.ui.header;
 
-import com.vaadin.event.MouseEvents.ClickEvent;
-import com.vaadin.event.MouseEvents.ClickListener;
-import com.vaadin.server.Resource;
-import com.vaadin.server.ThemeResource;
-import com.vaadin.shared.ui.label.ContentMode;
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.vaadin.spring.UIScope;
+import org.vaadin.spring.VaadinComponent;
+
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Image;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Link;
-import com.vaadin.ui.MenuBar;
-import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.VerticalLayout;
 
+@UIScope
+@VaadinComponent
 public class Header extends VerticalLayout {
 
 	/**
@@ -20,58 +18,59 @@ public class Header extends VerticalLayout {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private HorizontalLayout cabecera;
-	private HorizontalLayout menuPrincipal;
-	private HorizontalLayout barraHerramientas;
+	@Autowired
+	private HorizontalLayout isfarCabecera;
+	@Autowired
+	private HorizontalLayout isfarMenuPrincipal;
+	@Autowired
+	private HorizontalLayout isfarToolBar;
 	
-	public Header() {
+	@PostConstruct
+	protected void init() {
 		
 		// Cabecera
-		cabecera = new IsfarCabecera();
-		cabecera.setHeight(40, Unit.PIXELS);
-		cabecera.setWidth(100, Unit.PERCENTAGE);
-		cabecera.setStyleName("cabecera");
+		isfarCabecera.setHeight(40, Unit.PIXELS);
+		isfarCabecera.setWidth(100, Unit.PERCENTAGE);
+		isfarCabecera.setStyleName("cabecera");
 
 
 		// menuPrincipal
-		menuPrincipal = new IsfarMenuPrincipal();
-		menuPrincipal.setHeight(22, Unit.PIXELS);
-		menuPrincipal.setWidth(100, Unit.PERCENTAGE);
-		menuPrincipal.setStyleName("menuPrincipal");
+		isfarMenuPrincipal.setHeight(22, Unit.PIXELS);
+		isfarMenuPrincipal.setWidth(100, Unit.PERCENTAGE);
+		isfarMenuPrincipal.setStyleName("menuPrincipal");
 
 		// barraHerramientas
-		barraHerramientas = new ContactToolBar();
-		barraHerramientas.setHeight(30, Unit.PIXELS);
-		barraHerramientas.setWidth(100, Unit.PERCENTAGE);
-		barraHerramientas.setStyleName("barraHerramientas");
+		isfarToolBar.setHeight(30, Unit.PIXELS);
+		isfarToolBar.setWidth(100, Unit.PERCENTAGE);
+		isfarToolBar.setStyleName("barraHerramientas");
 
-		this.addComponents(cabecera, menuPrincipal, barraHerramientas);
+		this.addComponents(isfarCabecera, isfarMenuPrincipal, isfarToolBar);
 		this.setSpacing(false);
 		
 	}
 
 	public HorizontalLayout getCabecera() {
-		return cabecera;
+		return isfarCabecera;
 	}
 
 	public void setCabecera(HorizontalLayout cabecera) {
-		this.cabecera = cabecera;
+		this.isfarCabecera = cabecera;
 	}
 
 	public HorizontalLayout getMenuPrincipal() {
-		return menuPrincipal;
+		return isfarMenuPrincipal;
 	}
 
 	public void setMenuPrincipal(HorizontalLayout menuPrincipal) {
-		this.menuPrincipal = menuPrincipal;
+		this.isfarMenuPrincipal = menuPrincipal;
 	}
 
 	public HorizontalLayout getBarraHerramientas() {
-		return barraHerramientas;
+		return isfarToolBar;
 	}
 
 	public void setBarraHerramientas(HorizontalLayout barraHerramientas) {
-		this.barraHerramientas = barraHerramientas;
+		this.isfarToolBar = barraHerramientas;
 	}
 	
 	
